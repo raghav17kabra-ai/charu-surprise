@@ -896,17 +896,24 @@ window.onload = () => {
 };
 
 function endShow() {
+
     confetti({
-        particleCount: 500,
-        spread: 360,
-        startVelocity: 45
+        particleCount: 300,
+        spread: 180,
+        origin: { y: 0.6 }
     });
 
     setTimeout(() => {
-        location.reload();
-    }, 1000);
-}
+        confetti({
+            particleCount: 200,
+            spread: 360
+        });
+    }, 500);
 
+    setTimeout(() => {
+        location.reload();
+    }, 5000);
+}
 const video = document.querySelector("video");
 
 if (video) {
